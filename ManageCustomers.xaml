@@ -1,0 +1,102 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantManagementSystem.ManageCustomers"
+             Title="ManageCustomers">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#6200EE</Color>
+            <Color x:Key="SecondaryColor">#03DAC6</Color>
+            <Color x:Key="BackgroundColor">#000000</Color>
+            <Color x:Key="ButtonColor">#FF0000</Color>
+            <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+            <Color x:Key="HeadlineColor">#FFFFFF</Color>
+            <Style x:Key="ModernButton" TargetType="Button">
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="d.webp"
+                   Aspect="AspectFill"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <!-- Content StackLayout -->
+            <StackLayout Padding="30,30,30,30"
+                         Spacing="20"
+                         BackgroundColor="{StaticResource BackgroundColor}"
+                         Opacity="{StaticResource ContentBackgroundOpacity}"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="StartAndExpand">
+
+                <!-- Welcome Label -->
+                <Label Text="Manage Customers"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       TextColor="{StaticResource HeadlineColor}" />
+
+                <!-- Customer Name Entry -->
+                <Entry x:Name="Customer_nameEntry"
+                       Placeholder="Enter First Name"
+                       TextColor="White"
+                       FontSize="Small"
+                       WidthRequest="400"/>
+
+                <!-- Phone Number Entry -->
+                <Entry x:Name="Phone_numberEntry"
+                       Placeholder="Enter Phone Number"
+                       TextColor="White"
+                       FontSize="Small"
+                       WidthRequest="400"/>
+
+                <!-- Save New Customer Button -->
+                <Button Text="Save New Customer"
+                        TextColor="{StaticResource ButtonTextColor}"
+                        WidthRequest="400"
+                        BackgroundColor="{StaticResource ButtonColor}"
+                        FontSize="20"
+                        Margin="40,40,40,10"/>
+
+                <!-- Display Customer Entry -->
+                <Label x:Name="displaycustomerEntry"
+                       Text=""
+                       TextColor="White"
+                       FontSize="20"
+                       Margin="0,0,0,20"/>
+
+                <!-- Select Customer Picker -->
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+                    <Label Text="Select Customer to delete" Padding="10" />
+                    <Picker x:Name="customerPicker" HorizontalOptions="Fill" WidthRequest="400" ></Picker>
+                </StackLayout>
+
+                <!-- Delete Customer Button -->
+                <Button x:Name="del_button"
+                        Text="Delete Customer"
+                        TextColor="{StaticResource ButtonTextColor}"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="400"
+                        BackgroundColor="{StaticResource ButtonColor}"
+                        FontSize="20"
+                        Margin="40,0,40,0"/>
+
+                <!-- Display Customer Entry (Delete) -->
+                <Label x:Name="displaycustomerEntry_del"
+                       Text=""
+                       TextColor="White"
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="400"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

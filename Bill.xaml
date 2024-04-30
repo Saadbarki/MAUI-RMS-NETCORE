@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantManagementSystem.Bill"
+             Title="Bill">
+    <!--DO WE NEED THIS PAGE AS WE DISPLAY THE BILL ON DISPLAY BILL??-->
+    <VerticalStackLayout>
+        <Label 
+            Text="Here is your bill:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="30" />
+
+        <Label Text="{Binding Info}" />
+        <!-- here to display the order details, which can bind with the information in order main -->
+
+
+        <Button Text="Back to Main Page" HorizontalOptions="CenterAndExpand" WidthRequest="400" BackgroundColor="#BD0B0B" FontSize="20" Margin="40" Clicked="OnBackToMainButtonClicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantManagementSystem.OrderDisplay"
+             Title="OrderDisplay">
+    <VerticalStackLayout>
+        <Label 
+            Text="Here is your order: "
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" FontSize="20"/>
+
+        <Label 
+         Text=""
+         VerticalOptions="Center" 
+         HorizontalOptions="Center"
+         FontSize="20" Padding="20,50,20,10" 
+         x:Name="BookingNumber" />
+
+        <Label
+        Text="Mains:"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center"
+        FontSize="20" Padding="20,50,20,10" 
+        x:Name="MainsChosen" />
+
+        <Label
+        Text="Pops:"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center"
+        FontSize="20" Padding="20,50,20,10" 
+        x:Name="PopsChosen" />
+
+        <Label
+        Text="Total Cost:"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center"
+        FontSize="20" Padding="20,50,20,10" 
+        x:Name="TotalCost" />
+
+
+
+
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+            <Button Text="Cancel" HorizontalOptions="CenterAndExpand" WidthRequest="400" BackgroundColor="#FF0000" FontSize="20" Margin="40" Clicked="OnBackToMainButtonClicked"/>
+            <Button Text="Send to Order" HorizontalOptions="CenterAndExpand" WidthRequest="400" BackgroundColor="#FF0000" FontSize="20" Margin="40" Clicked="OnSendToOrderButtonClicked"/>
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

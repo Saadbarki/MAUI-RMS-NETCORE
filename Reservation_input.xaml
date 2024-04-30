@@ -1,0 +1,95 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantManagementSystem.Reservation_input"
+             Title="Reservation_input">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ButtonColor">#FF0000</Color>
+            <!-- Changed color to red -->
+            <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+            <Color x:Key="HeadlineColor">#FFFFFF</Color>
+            <Style x:Key="ModernButton" TargetType="Button">
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <!-- Center horizontally -->
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand">
+        <!-- Center vertically and horizontally -->
+        <!-- Background Image -->
+        <Image Source="d.webp"
+               Aspect="AspectFill"
+               AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="All" />
+
+        <!-- Content StackLayout -->
+        <StackLayout Padding="20"
+                     Spacing="20">
+
+            <Label Text="Book your table here!"
+                   HorizontalOptions="Center"
+                   FontSize="20"
+                   TextColor="{StaticResource HeadlineColor}" />
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Label Text="Select Customer" Padding="10" TextColor="{StaticResource HeadlineColor}" />
+                <Picker x:Name="customerPicker"
+                        WidthRequest="400"
+                        BackgroundColor="{StaticResource ButtonColor}"
+                        TextColor="{StaticResource ButtonTextColor}"
+                        FontSize="20" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Label Text="Date" Padding="10" TextColor="{StaticResource HeadlineColor}" />
+                <DatePicker x:Name="schedulePicker"
+                            WidthRequest="400"
+                            DateSelected="updateTimepicker"
+                            BackgroundColor="{StaticResource ButtonColor}"
+                            TextColor="{StaticResource ButtonTextColor}"
+                            FontSize="20" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Label Text="Table" Padding="10" TextColor="{StaticResource HeadlineColor}" />
+                <Picker x:Name="tablePicker"
+                        WidthRequest="400"
+                        Title="Select a table"
+                        SelectedIndexChanged="updateTimepicker"
+                        BackgroundColor="{StaticResource ButtonColor}"
+                        TextColor="{StaticResource ButtonTextColor}"
+                        FontSize="20" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Label Text="Time" Padding="10" TextColor="{StaticResource HeadlineColor}" />
+                <Picker x:Name="timePicker"
+                        WidthRequest="400"
+                        Title="Please pick a time slot"
+                        BackgroundColor="{StaticResource ButtonColor}"
+                        TextColor="{StaticResource ButtonTextColor}"
+                        FontSize="20" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Button Text="Back to Main Page"
+                        HorizontalOptions="FillAndExpand"
+                        Style="{StaticResource ModernButton}"
+                        Clicked="OnBackToMainButtonClicked" />
+                <Button Text="Submit"
+                        HorizontalOptions="FillAndExpand"
+                        Style="{StaticResource ModernButton}"
+                        Clicked="OnSubmitReservationButtonClicked" />
+            </HorizontalStackLayout>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

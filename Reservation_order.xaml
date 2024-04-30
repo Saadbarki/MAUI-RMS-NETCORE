@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantManagementSystem.Reservation_order"
+             Title="Reservation_order">
+    <VerticalStackLayout>
+        <Label 
+         Text="Thank you! You have successfully made a reservation."
+         VerticalOptions="Center" 
+         HorizontalOptions="Center"
+         FontSize="20" Padding="20,50,20,10"
+         x:Name="reservationMessage" />
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+            <Button Text="Back to the Main Page" HorizontalOptions="CenterAndExpand" WidthRequest="400" BackgroundColor="#4CAF50" FontSize="20" Margin="40" Clicked="OnBacktoMainButtonClicked"></Button>
+        </HorizontalStackLayout>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

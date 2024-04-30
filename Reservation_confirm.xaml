@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantManagementSystem.Reservation_confirm"
+             Title="Reservation_confirm">
+    <VerticalStackLayout>
+        <Label 
+            Text="Please confirm your reservation information below: "
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20" Padding="20,50,20,10"/>
+
+        <Label Text="{Binding Info}" />
+        <!-- here to display the reservation details, which can bind with the information in reservation input -->
+
+        <Label 
+            Text="Customer: "
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20" Padding="20,50,20,10" 
+            x:Name="customerName" />
+
+        <Label 
+            Text="Date:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20" Padding="20,50,20,10" 
+            x:Name="tentativeDate" />
+
+        <Label 
+            Text="Booth:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20" Padding="20,50,20,10" 
+            x:Name="tentativeBooth" />
+
+        <Label 
+            Text="Time:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20" Padding="20,50,20,10"
+            x:Name="tentativeTime" />
+
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10">
+            <Button Text="Back" HorizontalOptions="CenterAndExpand" WidthRequest="400" BackgroundColor="#4CAF50" TextColor="#F3F3F3" FontSize="20" Margin="40" Clicked="OnBacktoReservationInputButtonClicked"></Button>
+            <Button Text="Confirm" HorizontalOptions="CenterAndExpand" WidthRequest="400" BackgroundColor="#4CAF50" TextColor="#F3F3F3" FontSize="20" Margin="40" Clicked="OnConfirmReservationButtonClicked"></Button>
+        </HorizontalStackLayout>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

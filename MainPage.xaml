@@ -1,0 +1,85 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestaurantManagementSystem.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#6200EE</Color>
+            <Color x:Key="SecondaryColor">#03DAC6</Color>
+            <Color x:Key="BackgroundColor">#000000</Color>
+            <Color x:Key="ButtonColor">#FF0000</Color>
+            <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+            <Color x:Key="HeadlineColor">#FFFFFF</Color>
+            <Style x:Key="ModernButton" TargetType="Button">
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="d.webp"
+                   Aspect="AspectFill"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <!-- Content StackLayout -->
+            <StackLayout Padding="30,30,30,30"
+                         Spacing="20"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="StartAndExpand">
+
+                <!-- Logo Image -->
+                <Image Source="c.png"
+                       HeightRequest="50"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" />
+
+                <!-- Welcome Label -->
+                <Label Text="Welcome!      "
+                       HorizontalOptions="Center"
+                       FontSize="24"
+                       TextColor="{StaticResource HeadlineColor}" />
+
+                <!-- Buttons -->
+                <Button x:Name="TakeOutBtn"
+                        Text="Take-Out"
+                        Clicked="OnGoToOrderButtonClicked"
+                        Style="{StaticResource ModernButton}" />
+
+                <Button x:Name="OrderNowBtn"
+                        Text="Order Now"
+                        Clicked="OnOrderNowButtonClicked"
+                        Style="{StaticResource ModernButton}" />
+
+                <Button x:Name="AddCusBtn"
+                        Text="Manage Customers"
+                        Clicked="OnAddCustomerButtonClicked"
+                        Style="{StaticResource ModernButton}" />
+
+                <Button x:Name="ReserBtn"
+                        Text="Make a Reservation"
+                        Clicked="OnReservationButtonClicked"
+                        Style="{StaticResource ModernButton}" />
+
+                <!-- Additional Buttons -->
+                <Button x:Name="MenusBtn"
+                      Text="Menus"
+                         Style="{StaticResource ModernButton}" />
+
+                        <Button x:Name="AccountsBtn"
+                     Text="Accounts"
+                      Style="{StaticResource ModernButton}" />
+
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
